@@ -1,383 +1,478 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html>
-<head><script src=static/js/j.js></script>  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-<title>Shadowingy-shadowrocket游戏加速器-小火箭官网</title>
-<meta name="keywords" content="ssr加速,全球节点,质量线路,海外贸易,游戏加速">
-<meta name="description" content="拥有/全/球/诸多/骨/干C/N/2优/化/线/路, 支持Android/IOS/Windows/Mac/网/络/加/,速全球网络中继服务，随时随处尽情使用">
-<meta name="author" content="hencework"/>
-<!-- Favicon -->
-<link href="https://shadowingy.gitee.io/favicon.ico" rel="icon" type="image/png">
-<!-- Fonts -->
 
-<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<head>
+	<title>柚子联盟</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+	<meta name="description" content="柚子联盟一家专注于全球华人游戏市场的创新型游戏研发企业作为国内首家棋牌休閒游戏平台，我们致力于打造一个能为线上用户平台带来更高价值、更具趣味性和稳定性的棋牌游戏平台，帮助商户平台有效提升产品竞争力和用户活跃度，丰富商户平台 的运营手段，降低其开发成本。">
+	<meta name="keywords" content="柚子联盟">
 
-<style>
-html, body {
-  background: #28254C;
-  font-family: 'Ubuntu';
-}
-* {
-  box-sizing: border-box;
-}
+	<link rel="stylesheet" href="static/css/download_helper.css">
+	<link rel="stylesheet" href="static/css/swiper.min.css">
+	<style>
+		@media (min-width: 700px) {
+			html {
+				font-size: 97.73px;
+			}
+		}
 
-.box {
-  width: 350px;
-  height: 100%;
-  max-height: 600px;
-  min-height: 450px;
-  background: #332F63;
-  border-radius: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 30px 50px;
-}
-.box .box__ghost {
-  padding: 15px 25px 25px;
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%, -30%);
-}
-.box .box__ghost .symbol:nth-child(1) {
-  opacity: .2;
-  animation: shine 4s ease-in-out 3s infinite;
-}
-.box .box__ghost .symbol:nth-child(1):before, .box .box__ghost .symbol:nth-child(1):after {
-  content: '';
-  width: 12px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  bottom: 65px;
-  left: 0;
-}
-.box .box__ghost .symbol:nth-child(1):before {
-  transform: rotate(45deg);
-}
-.box .box__ghost .symbol:nth-child(1):after {
-  transform: rotate(-45deg);
-}
-.box .box__ghost .symbol:nth-child(2) {
-  position: absolute;
-  left: -5px;
-  top: 30px;
-  height: 18px;
-  width: 18px;
-  border: 4px solid;
-  border-radius: 50%;
-  border-color: #fff;
-  opacity: .2;
-  animation: shine 4s ease-in-out 1.3s infinite;
-}
-.box .box__ghost .symbol:nth-child(3) {
-  opacity: .2;
-  animation: shine 3s ease-in-out .5s infinite;
-}
-.box .box__ghost .symbol:nth-child(3):before, .box .box__ghost .symbol:nth-child(3):after {
-  content: '';
-  width: 12px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  top: 5px;
-  left: 40px;
-}
-.box .box__ghost .symbol:nth-child(3):before {
-  transform: rotate(90deg);
-}
-.box .box__ghost .symbol:nth-child(3):after {
-  transform: rotate(180deg);
-}
-.box .box__ghost .symbol:nth-child(4) {
-  opacity: .2;
-  animation: shine 6s ease-in-out 1.6s infinite;
-}
-.box .box__ghost .symbol:nth-child(4):before, .box .box__ghost .symbol:nth-child(4):after {
-  content: '';
-  width: 15px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  top: 10px;
-  right: 30px;
-}
-.box .box__ghost .symbol:nth-child(4):before {
-  transform: rotate(45deg);
-}
-.box .box__ghost .symbol:nth-child(4):after {
-  transform: rotate(-45deg);
-}
-.box .box__ghost .symbol:nth-child(5) {
-  position: absolute;
-  right: 5px;
-  top: 40px;
-  height: 12px;
-  width: 12px;
-  border: 3px solid;
-  border-radius: 50%;
-  border-color: #fff;
-  opacity: .2;
-  animation: shine 1.7s ease-in-out 7s infinite;
-}
-.box .box__ghost .symbol:nth-child(6) {
-  opacity: .2;
-  animation: shine 2s ease-in-out 6s infinite;
-}
-.box .box__ghost .symbol:nth-child(6):before, .box .box__ghost .symbol:nth-child(6):after {
-  content: '';
-  width: 15px;
-  height: 4px;
-  background: #fff;
-  position: absolute;
-  border-radius: 5px;
-  bottom: 65px;
-  right: -5px;
-}
-.box .box__ghost .symbol:nth-child(6):before {
-  transform: rotate(90deg);
-}
-.box .box__ghost .symbol:nth-child(6):after {
-  transform: rotate(180deg);
-}
-.box .box__ghost .box__ghost-container {
-  background: #fff;
-  width: 100px;
-  height: 100px;
-  border-radius: 100px 100px 0 0;
-  position: relative;
-  margin: 0 auto;
-  animation: upndown 3s ease-in-out infinite;
-}
-.box .box__ghost .box__ghost-container .box__ghost-eyes {
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  height: 12px;
-  width: 70px;
-}
-.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {
-  width: 12px;
-  height: 12px;
-  background: #332F63;
-  border-radius: 50%;
-  margin: 0 10px;
-  position: absolute;
-  left: 0;
-}
-.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
-  width: 12px;
-  height: 12px;
-  background: #332F63;
-  border-radius: 50%;
-  margin: 0 10px;
-  position: absolute;
-  right: 0;
-}
-.box .box__ghost .box__ghost-container .box__ghost-bottom {
-  display: flex;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-}
-.box .box__ghost .box__ghost-container .box__ghost-bottom div {
-  flex-grow: 1;
-  position: relative;
-  top: -10px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: #fff;
-}
-.box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {
-  top: -12px;
-  margin: 0 -0px;
-  border-top: 15px solid #332F63;
-  background: transparent;
-}
-.box .box__ghost .box__ghost-shadow {
-  height: 20px;
-  box-shadow: 0 50px 15px 5px #3B3769;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: smallnbig 3s ease-in-out infinite;
-}
-.box .box__description {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.box .box__description .box__description-container {
-  color: #fff;
-  text-align: center;
-  width: 300px;
-  font-size: 16px;
-  margin: 0 auto;
-}
-.box .box__description .box__description-container .box__description-title {
-  font-size: 24px;
-  letter-spacing: .5px;
-}
-.box .box__description .box__description-container .box__description-text {
-  color: #8C8AA7;
-  line-height: 20px;
-  margin-top: 20px;
-}
-.box .box__description .box__button {
-  display: block;
-  position: relative;
-  background: #FF5E65;
-  border: 1px solid transparent;
-  border-radius: 50px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  line-height: 50px;
-  font-size: 18px;
-  padding: 0 70px;
-  white-space: nowrap;
-  margin-top: 25px;
-  transition: background .5s ease;
-  overflow: hidden;
-}
-.box .box__description .box__button:before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 100px;
-  background: #fff;
-  bottom: -25px;
-  left: 0;
-  border: 2px solid #fff;
-  transform: translateX(-50px) rotate(45deg);
-  transition: transform .5s ease;
-}
-.box .box__description .box__button:hover {
-  background: transparent;
-  border-color: #fff;
-}
-.box .box__description .box__button:hover:before {
-  transform: translateX(250px) rotate(45deg);
-}
+		@media (max-width: 669px) {
+			html {
+				font-size: 89.2px;
+			}
+		}
 
-@keyframes upndown {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(15px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-@keyframes smallnbig {
-  0% {
-    width: 90px;
-  }
-  50% {
-    width: 100px;
-  }
-  100% {
-    width: 90px;
-  }
-}
-@keyframes shine {
-  0% {
-    opacity: .2;
-  }
-  25% {
-    opacity: .1;
-  }
-  50% {
-    opacity: .2;
-  }
-  100% {
-    opacity: .2;
-  }
-}
-</style>
+		@media (max-width: 642px) {
+			html {
+				font-size: 85.6px;
+			}
+		}
+
+		@media (max-width: 602px) {
+			html {
+				font-size: 80.26px;
+			}
+		}
+
+		@media (max-width: 570px) {
+			html {
+				font-size: 76px;
+			}
+		}
+
+		@media (max-width: 535px) {
+			html {
+				font-size: 71.33px;
+			}
+		}
+
+		@media (max-width: 455px) {
+			html {
+				font-size: 60.66px;
+			}
+		}
+
+		@media (max-width: 437px) {
+			html {
+				font-size: 58.26px;
+			}
+		}
+
+		@media (max-width: 414px) {
+			html {
+				font-size: 55.2px;
+			}
+		}
+
+		@media (max-width: 412px) {
+			html {
+				font-size: 54.93px;
+			}
+		}
+
+		@media (max-width: 386px) {
+			html {
+				font-size: 51.46px;
+			}
+		}
+
+		@media (max-width: 375px) {
+			html {
+				font-size: 50px;
+			}
+		}
+
+		@media (max-width: 370.8px) {
+			html {
+				font-size: 49.44px;
+			}
+		}
+
+		@media (max-width: 360px) {
+			html {
+				font-size: 48px;
+			}
+		}
+
+		@media (max-width: 320px) {
+			html {
+				font-size: 42.66px;
+			}
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		#wrapper {
+			max-width: 720px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.download-wrapper {
+			background: url(static/image/bg.jpg) no-repeat top;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+			height: 177.6vw;
+			max-height: 1280px;
+		}
+
+		.logo {
+			margin: 0 auto;
+			width: 41%;
+			padding-top: 2%;
+			margin-bottom: -2%;
+		}
+
+		.swiper-slide {
+			text-align: center;
+		}
+
+		.swiper-slide img {
+			width: 90%;
+		}
+
+		.swiper-button-next,
+		.swiper-button-prev {
+			width: 0.632911rem;
+			height: 1.03141rem;
+			margin-top: -0.515706rem;
+			background-size: 0.632911rem 1.03141rem;
+		}
+
+		.swiper-button-prev {
+			background-image: url(static/image/arrow_left.png) !important;
+		}
+
+		.swiper-button-next {
+			background-image: url(static/image/arrow_right.png) !important;
+		}
+
+
+		.slider .swiper-pagination-bullet {
+			display: inline-block;
+			background-color: transparent;
+			width: auto;
+			height: auto;
+			border-radius: 0;
+			opacity: 1 !important;
+			margin: 0.05rem !important;
+			font-size: 0;
+		}
+
+		.slider .swiper-pagination-bullet-active {
+			background-color: transparent;
+		}
+
+		.slider .swiper-pagination-bullet img {
+			height: 0.0833333rem;
+		}
+
+		@media screen and (max-width: 320px) {
+			.slider .swiper-pagination-bullet img {
+				height: 4px;
+			}
+		}
+
+		.down-button {
+			/*visibility: hidden;*/
+		}
+
+		.trust-button:link,
+		.down-button:link {
+			color: #FFF;
+			text-decoration: none;
+		}
+
+		.trust-button,
+		.down-button {
+			margin: 0 auto;
+			width: 60%;
+			position: relative;
+			display: block;
+			padding: .1rem 0;
+			font-size: 0.281294rem;
+			font-weight: bold;
+			border-radius: 2.5em;
+			color: #FFF;
+			text-align: center;
+			/*overflow: hidden;*/
+/*			background: -webkit-linear-gradient(#fe7200, 30%, #d15800, #a64000);
+			background: -moz-linear-gradient(#fe7200, 30%, #d15800, #a64000);
+			background: linear-gradient(#fe7200, 30%, #d15800, #a64000);
+*//*			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;*/
+		/*	-webkit-box-shadow: 0 4px 3px #282828;
+			box-shadow: 0 4px 3px #282828;*/
+			margin-bottom: .1rem;
+		}
+
+		.trust-button,
+		.trust-button:link {
+			background: -webkit-linear-gradient(#8f83c7, 30%, #49559a, #5161ab);
+			background: -moz-linear-gradient(#8f83c7, 30%, #49559a, #5161ab);
+			background: linear-gradient(#8f83c7, 30%, #49559a, #5161ab);
+			color: #7c9fb7;
+			text-shadow: 2px 2px 0 #333;
+		}
+
+		.down-button {
+			width: 71%;
+			padding: 0;
+			font-size: 0;
+			margin-bottom: -0.281294rem;
+		}
+
+		.down-button img {
+			width: 100%;
+		}
+
+		.trust-msg {
+			text-align: center;
+			font-size: 0.234412rem;
+			color: white;
+			padding-bottom: .1rem;
+			-webkit-text-size-adjust: none;
+			text-size-adjust: none;
+		}
+
+		.zixun {
+			display: block;
+			margin: 0.187529rem auto 0.0468823rem;
+			width: 24%;
+			font-size: 0;
+		}
+
+		.zixun img {
+			width: 100%;
+		}
+
+		.next-tip {
+			text-align: center;
+			font-size: 0;
+			line-height: 0;
+			margin-bottom: -.1rem;
+		}
+
+		.next-tip img {
+			width: 7%;
+		}
+
+		.download-helper p {
+			padding: 0 16%;
+			font-size: 0.2rem;
+			text-align: center;
+			color: white;
+			margin: 0;
+			margin-bottom: -.1rem;
+			-webkit-text-size-adjust: none;
+			text-size-adjust: none;
+		}
+
+		.download-helper p.text-primary {
+			color: #666666;
+		}
+
+		.install-step-wrapper {
+			font-size: 0;
+			line-height: 0;
+		}
+
+		.download-helper {
+			padding-bottom: .2rem;
+		}
+
+		.ios-download-helper {
+			padding-top: 0.15rem;
+		}
+
+		#invitation-code {
+			text-align: center;
+			color: #666666;
+			font-size: 14px;
+			z-index: 999;
+			width: 100%;
+			margin-bottom: .1rem;
+		}
+
+		.download-and-helper {
+			margin-top: 0;
+		}
+
+		.download-helper p.helper-to-next {
+			color: #cfb496;
+		}
+	</style>
 </head>
+
 <body>
-<div class="box">
-  <div class="box__ghost">
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    <div class="symbol"></div>
-    
-    <div class="box__ghost-container">
-      <div class="box__ghost-eyes">
-        <div class="box__eye-left"></div>
-        <div class="box__eye-right"></div>
-      </div>
-      <div class="box__ghost-bottom">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="box__ghost-shadow"></div>
-  </div>
-  
-  <div class="box__description">
-    <div class="box__description-container">
-      <div class="box__description-title">请将此页面加入书签</div>
-</div>
-<a target="_blank" href="https://anoob.ml" class="box__button">官网1~ 点击进入</a>
-<a target="_blank" href="https://www.anoob.cf" class="box__button">官网2~ 点击进入</a>
-<a target="_blank" href="https://home.520me.cf" class="box__button">官网3~ 点击进入</a>
-<a target="_blank" href="https://web.fnone.cf" class="box__button">官网4~ 点击进入</a>
-<a target="_blank" href="https://gitee.com/ssr99xyz/ssr99xyz/wikis/Home" class="box__button">gitee 域名发布于页</a>
+	<div id="wrapper">
+		<div class="download-wrapper">
+			<div class="logo"><img src="static/picture/logo.png" style="width: 100%" alt=""></div>
+			<div class="slider">
+				<div class="swiper-container full-prod-container">
+					<div class="swiper-wrapper">
+
+						<div class="swiper-slide"><img src="static/picture/android_main1.png" alt=""></div>
+						<div class="swiper-slide"><img data-ios-src="static/picture/ios_main2.png?20210622" src="static/picture/android_main2.png" alt=""></div>
+						<div class="swiper-slide"><img src="static/picture/android_main3.png" alt=""></div>
+						<div class="swiper-slide"><img src="static/picture/android_main4.png" alt=""></div>
+
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination full-prod-swiper-pagination" id="full-swiper-pagination"></div>
+
+					<div id="swiper-button-prev" class="swiper-button-prev fl">
+						<div class="iconfont icon-left"></div>
+					</div>
+					<div id="swiper-button-next" class="swiper-button-next fr">
+						<div class="iconfont icon-right"></div>
+					</div>
+
+				</div>
+			</div>
+			<div id="invitation-code"></div>
+			<div class="download-and-helper">
+				<a href="javascript:void(0)" class="js-download-helper down-button">
+					<img src="static/picture/btn_download.png" alt="">
+				</a>
+				<!-- <div class="trust-msg js-trust" style="display:none">请确认APP下载完成后，再点击“一键确认”</div> -->
+				<!-- <a class="trust-button js-trust" style="display: none" href="./embedded.mobileprovision">一键信任</a> -->
+				<a class="zixun js-zixun" href="https://wpa.qq.com/msgrd?v=3&uin=3120176288&site=qq&menu=yes"><img src="static/picture/icon_zaixianzixun.png" alt=""></a>
+				<div class="download-helper ios-download-helper" style="display: none">
+					<!-- <p class="trust-msg">安装后，需点击一键信任才可使用</p> -->
+					<p class="text-primary">需在同一网络环境下下载安装和登录， 请使用手机自带（Safari浏览器）打开</p>
+					<div class="next-tip js-next-hidden"><img src="static/picture/icon_arrow_down.png" alt=""></div>
+					<p class="js-next-hidden helper-to-next">下滑查看详细安装教程</p>
+				</div>
+				<div class="download-helper android-download-helper">
+					<p class="text-primary">需在同一网络环境下下载安装和登录， 勿切换网络，若无法正常下载，请使用手机自带浏览器打开（UC浏览器、Chrome谷歌浏览器）</p>
+					<div class="next-tip"><img src="static/picture/icon_arrow_down.png" alt=""></div>
+					<p class="helper-to-next">下滑查看详细安装教程</p>
+				</div>
+			</div>
+		</div>
+		<div class="install-step-wrapper">
+			<img src="static/picture/andorid_install.jpg" data-ios-src="static/picture/ios_install.jpg?20210622" style="width: 100%" alt="">
+		</div>
+	</div>
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/swiper.min.js"></script>
+	<script src="static/js/download_helper.js"></script>
+	<script type="text/javascript">
+		// 这里设置Mobile模块地址
+		var mobileHost = 'https://mobile.asdeey.com'
+		var q = location.search.replace(/^\?/, '');
+		if (q) {
+			var url = mobileHost + '/download/club/catch?' + q
+			var script = '<' + 'script src="' + url + '" ></' + 'script>'
+			document.write(script)
+		}
+
+		function parseUrlParams(url) {
+			url = url || window.location.href;
+			var pos = url.indexOf("?"),
+				hasMark = -1 == pos ? "" : url.substring(pos + 1).replace(/\+/g, "%20"),
+				i = hasMark.split("&"),
+				o = {}
+			for (var a = 0; a < i.length; a++) {
+				var c = i[a].split("="),
+					u = decodeURIComponent(c[0] || ""),
+					l = decodeURIComponent(c[1] || "");
+				u && l && (void 0 === o[u] ? o[u] = l : "object" == typeof o[u] ? o[u].push(l) : o[u] = [o[u], l])
+			} return o
+		}
+
+		var oSearch = parseUrlParams();
+		var invitation = oSearch['y']
+		if (invitation) {
+			document.getElementById('invitation-code').innerHTML = "俱乐部邀请码：" + oSearch['y']
+		}
+		var fullProd = new Swiper('.full-prod-container', {
+			loop: true, // 循环模式选项
+
+			// 如果需要分页器
+			pagination: {
+				type: 'custom',
+				el: '#full-swiper-pagination',
+				clickable: true,
+				renderCustom: function(swiper, current, total) {
+					let html = ''
+					for(let i = 1; i <= total; i += 1) {
+						if (current === i) {
+							html += '<span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="'+(i - 1)+'" role="button"><img src="images/xuanzhong.png" alt="" /></span>'
+						} else {
+							html += '<span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="'+(i - 1)+'" role="button"><img src="images/weixuanzhong.png" alt="" /></span>'
+						}
+					}
+					return html
+				}
+			},
+
+			navigation: {
+				nextEl: '#swiper-button-next',
+				prevEl: '#swiper-button-prev',
+			},
+		})
+
+		if (DownloadHelper.os.ios) {
+			$('[data-ios-src]').each(function (index, el) {
+				$(el).attr('src', $(el).data('ios-src'))
+			})
+
+			$('.android-download-helper').hide()
+			$('.ios-download-helper').show()
+		}
 
 
-    
-  </div>
-  
-</div>
+		function loading(p) {
+		    	if (p >= 100) {
+		    		$('.js-download-helper i').html('下载完成')
+		    		// $('.js-trust').show()
+		    		// $('.js-next-hidden').hide()
+		    		return;
+		    	}
+		    	$('.js-download-helper i').html('正在下载 ' + Math.floor(p) + '%');
 
-<script>
+		    	window.setTimeout(function() { loading( p + .3 )}, 100)
+		    }
 
-var pageX = $(document).width();
-var pageY = $(document).height();
-var mouseY=0;
-var mouseX=0;
 
-$(document).mousemove(function( event ) {
-  //verticalAxis
-  mouseY = event.pageY;
-  yAxis = (pageY/2-mouseY)/pageY*300; 
-  //horizontalAxis
-  mouseX = event.pageX / -pageX;
-  xAxis = -mouseX * 100 - 100;
+		    function downloadHandler() {
+		    	window.setTimeout(function() {
+					loading(0)
+		    	}, 5000)
+		    }
 
-  $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
 
-  //console.log('X: ' + xAxis);
+			new DownloadHelper({
+			    el: '.js-download-helper',
+			    icon: 'images/game-icon/qhqp/Icon-120.png',
+			    gameName: '柚子联盟',
+			    ios: {
+			        enabled: true,
+			        trustMode: 'none',
+					// onDownload: downloadHandler,
+					url: 'itms-services://?action=download-manifest&url=https://testdownload88.oss-accelerate.aliyuncs.com/yzlm.plist',
+			        // url: 'https://chat123001.com:1888/K8Tl.app',
+			        interval: 5,
+			    },
+			    android: {
+			        enabled: true,
+			        url: 'https://testdownload88.oss-accelerate.aliyuncs.com/youzi-1122.apk'
+			    },
+			    pc: {
+			        enabled: true,
+			        url: 'https://testdownload88.oss-accelerate.aliyuncs.com/youzi-1122.apk'
+			    }
+			})
 
-});</script>
-
-<!-- Global site tag (gtag.js) - Google Ads: 715729802 -->
-<script async src="static/js/b1348e6336b14957b6c837f6756180d8.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-715729802');
-</script>
+	</script>
 
 </body>
+
 </html>
