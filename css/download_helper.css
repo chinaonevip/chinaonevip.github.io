@@ -1,0 +1,217 @@
+.mask { width:100%; height:100%; position:fixed; top:0; left:0; background:#000; filter:Alpha(Opacity=0); background:rgba(0, 0, 0, 0); z-index:1000; }
+
+
+.weixin-mask {
+}
+
+.weixin-mask-content {
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+}
+
+.weixin-mask-content {
+    font-size: 16px;
+    color: #fff;
+    font-family: "microsoft yahei";
+}
+
+.weixin-mask-content {
+    height: 100%;
+    top: 0;
+    background: #fff url("../image/unSupported.png") no-repeat center top;
+    -webkit-background-size: 85%;
+    background-size: 85%;
+}
+
+.app-icon,
+.browser-icon {
+    position: absolute;
+    left: 50%;
+}
+
+.ios .browser-icon {
+    width: 21.25%;
+    margin-top: 62%;
+    margin-left: -4%;
+}
+
+.android .browser-icon {
+    width: 18.75%;
+    margin-top: 65%;
+    margin-left: -4%;
+}
+
+.app-icon img,
+.browser-icon img {
+    width: 100%;
+}
+
+.app-icon {
+    width: 18.75%;
+    margin-top: 123%;
+    margin-left: 18%;
+}
+
+.appName {
+    margin-left: 50%;
+    width: 8rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: gray;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -o-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.tip-wrap {
+    height: 100%;
+}
+
+.tip-btn {
+    background-color: rgb(1, 122, 255);
+    width: 12.5em;
+    height: 2.1176em;
+    line-height: 2.1176em;
+    font-size: 1.416666666666667em;
+    border-radius: 1.0588em;
+    border: none;
+    color: white;
+    margin: 20px 0 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+}
+
+.tip-content {
+    border-radius: 10px;
+    background-color: rgb(249, 249, 249);
+    width: 25.4167em;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    z-index: 1001;
+    left: 50%;
+    top: 50%;
+    margin-left: -12.7084em;
+    margin-top: -14.3542em;
+    padding-bottom: 1em;
+}
+
+.tip-wrap-ios9 .tip-content {
+    height: auto;
+    padding-bottom: 1em;
+    margin-top: 0;
+    -webkit-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0, -50%, 0);
+    -o-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+}
+
+.tip-img {
+    width: 80%;
+}
+
+.tip-title {
+    font-size: 1.416666666666667em;
+    color: black;
+    font-weight: bold;
+    line-height: 3;
+    margin: 0 auto;
+}
+
+.tip-detail {
+    font-size: 1.25em;
+    color: rgb(79, 78, 78);
+    line-height: 1.2;
+
+    margin: 0 auto 10px;
+    width: 84%;
+    text-align: left;
+}
+
+.tip-detail~.tip-detail {
+    padding-top: 1em;
+}
+
+.tip-wrap-ios9 .controls {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.tip-wrap-ios9 .tip-btn {
+    float: left;
+    width: 45%;
+}
+
+.tip-wrap-ios9 .tip-btn~.tip-btn {
+    float: right;
+}
+
+.red {
+    color: red;
+}
+
+.tip-wrap .red {
+    font-weight: 600;
+}
+
+.dialog {}
+.dialog-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 80vw;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: rgba(0,0,0, .8);
+    border-radius: 5px;
+    z-index: 10001;
+    color: #eee;
+}
+
+.dialog-header {
+    position: relative;
+    z-index: 20;
+    height: 40px;
+    margin-bottom: -40px;
+}
+
+.dialog-close {
+    float: right;
+    width: .5rem;
+    height: .5rem;
+    margin-top: 0.125rem;
+    margin-right: 0.125rem;
+    line-height: .5rem;
+    text-align: center;
+    font-size: .5rem;
+    color: #a6a6a6;
+}
+
+.dialog-content {
+    text-align: center;
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+    font-size: 20px;
+}
+
+.dialog-content h3 {
+    font-size: 1rem;
+}
+
+.tip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    line-height: 1;
+    font-size: 10px;
+    background: rgba(0,0,0,.8);
+    color: rgba(255,255,255,.8);
+    transform: translate3d(-50%, 0, 0);
+    box-sizing: border-box;
+    padding: 5px 20px;
+    z-index: 10;
+    white-space:nowrap;
+    -webkit-text-size-adjust:none;
+}
