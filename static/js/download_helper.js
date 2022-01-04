@@ -49,11 +49,11 @@ var DownloadHelper = (function($) {
         url: '',
         // 浏览器图标
         trustMode: 'none', // 支持 popup、link 和 none
-        browserIcon: 'images/download_helper/browser-ios.png',
+        browserIcon: 'static/picture/browser-ios.png',
         // 信任教程地址
         trustHelperUrl: 'trust.html',
-        helperTip: 'images/download_helper/tip.jpg',
-        trustTip: 'images/download_helper/xinren.png',
+        helperTip: 'static/picture/tip.jpg',
+        trustTip: 'static/picture/xinren.png',
         iosHelperTipTemplate: iosHelperTip,
         ios9PlusHelperTipTemplate: ios9PlusHelperTip,
         onDownload: null,
@@ -63,7 +63,7 @@ var DownloadHelper = (function($) {
         // Android包地址
         url: '',
         // 浏览器图标
-        browserIcon: 'images/download_helper/browser-android.png',
+        browserIcon: 'static/picture/browser-android.png',
         onDownload: null,
     }
 
